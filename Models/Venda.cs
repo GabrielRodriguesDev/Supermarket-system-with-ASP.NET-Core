@@ -18,6 +18,5 @@ namespace Supermarket_system_with_ASP.NET_Core.Models
 
         public float Troco { get; set; }
 
-        
     }
 }
