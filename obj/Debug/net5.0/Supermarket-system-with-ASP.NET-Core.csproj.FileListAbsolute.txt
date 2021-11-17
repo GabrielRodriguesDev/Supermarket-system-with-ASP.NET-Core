@@ -62,3 +62,5 @@ D:\Technology\Sistemas\Gabriel\ASPNET\SchoolOfNet\Supermarket-system-with-ASP.NE
 D:\Technology\Sistemas\Gabriel\ASPNET\SchoolOfNet\Supermarket-system-with-ASP.NET-Core\obj\Debug\net5.0\Supermarket-system-with-ASP.NET-Core.genruntimeconfig.cache
 D:\Technology\Sistemas\Gabriel\ASPNET\SchoolOfNet\Supermarket-system-with-ASP.NET-Core\obj\Debug\net5.0\Razor\Views\Shared\_LayoutAdmin.cshtml.g.cs
 D:\Technology\Sistemas\Gabriel\ASPNET\SchoolOfNet\Supermarket-system-with-ASP.NET-Core\obj\Debug\net5.0\Razor\Views\Gestao\Index.cshtml.g.cs
+D:\Technology\Sistemas\Gabriel\ASPNET\SchoolOfNet\Supermarket-system-with-ASP.NET-Core\obj\Debug\net5.0\Razor\Views\Gestao\Categorias.cshtml.g.cs
+D:\Technology\Sistemas\Gabriel\ASPNET\SchoolOfNet\Supermarket-system-with-ASP.NET-Core\obj\Debug\net5.0\Razor\Views\Gestao\NovaCategoria.cshtml.g.cs
