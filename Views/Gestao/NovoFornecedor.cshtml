@@ -1,0 +1,24 @@
+@model Supermarket_system_with_ASP.NET_Core.DTO.FornecedorDTO; //Tipando o Form - 
+
+@{
+    Layout = "_LayoutAdmin";
+}
+
+<h3>Nova Fornecedor</h3>
+<hr>
+<form class="form-horizontal" asp-controller="Fornecedores" asp-action="Salvar" >
+    <input type="hidden" asp-for="Id" value="0">
+    
+    <label asp-for="Nome">Nome</label>
+    <input type="text" asp-for="Nome" class="form-control" placeholder="Nome do Fornecedor"><br>
+    <span asp-validation-for="Nome"></span>
+
+    <label asp-for="Email">E-mail</label>
+    <input type="email" asp-for="Email" class="form-control" placeholder="email@fornecedor.com"><br>
+    <span asp-validation-for="Email"></span>
+
+    <label asp-for="Telefone">Telefone</label>
+    <input asp-for="Telefone" class="form-control" placeholder="11 998786-8785"><br>
+    <span asp-validation-for="Telefone"></span>
+    <button class="btn btn-success">Cadastrar</button>
+</form>

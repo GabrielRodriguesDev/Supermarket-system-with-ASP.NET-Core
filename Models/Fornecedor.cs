@@ -14,5 +14,7 @@ namespace Supermarket_system_with_ASP.NET_Core.Models
         public string Email { get; set; }
 
         public string Telefone { get; set; }
+
+        public bool Status { get; set; }
     }
 }

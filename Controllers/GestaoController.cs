@@ -17,5 +17,13 @@ namespace Supermarket_system_with_ASP.NET_Core.Controllers
         public IActionResult NovaCategoria(){
             return View();
         }
+
+        public IActionResult Fornecedores(){
+            return View();
+        }
+
+        public IActionResult NovoFornecedor(){
+            return View();
+        }
     }
 }

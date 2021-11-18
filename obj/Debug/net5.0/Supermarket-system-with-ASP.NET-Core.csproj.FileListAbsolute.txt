@@ -64,3 +64,5 @@ D:\Technology\Sistemas\Gabriel\ASPNET\SchoolOfNet\Supermarket-system-with-ASP.NE
 D:\Technology\Sistemas\Gabriel\ASPNET\SchoolOfNet\Supermarket-system-with-ASP.NET-Core\obj\Debug\net5.0\Razor\Views\Gestao\Index.cshtml.g.cs
 D:\Technology\Sistemas\Gabriel\ASPNET\SchoolOfNet\Supermarket-system-with-ASP.NET-Core\obj\Debug\net5.0\Razor\Views\Gestao\Categorias.cshtml.g.cs
 D:\Technology\Sistemas\Gabriel\ASPNET\SchoolOfNet\Supermarket-system-with-ASP.NET-Core\obj\Debug\net5.0\Razor\Views\Gestao\NovaCategoria.cshtml.g.cs
+D:\Technology\Sistemas\Gabriel\ASPNET\SchoolOfNet\Supermarket-system-with-ASP.NET-Core\obj\Debug\net5.0\Razor\Views\Gestao\Fornecedores.cshtml.g.cs
+D:\Technology\Sistemas\Gabriel\ASPNET\SchoolOfNet\Supermarket-system-with-ASP.NET-Core\obj\Debug\net5.0\Razor\Views\Gestao\NovoFornecedor.cshtml.g.cs
