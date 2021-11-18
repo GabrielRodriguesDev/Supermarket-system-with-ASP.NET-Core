@@ -16,11 +16,11 @@ namespace Supermarket_system_with_ASP.NET_Core.DTO
         [MinLength(2, ErrorMessage = "O nome precisa ter mais de 2 caracteres.")]
         public string Nome { get; set; }
 
-        [Required]
+        [Required(ErrorMessage = "O e-mail é obrigatório.")]
         [EmailAddress(ErrorMessage = "E-mail inválido.")]
         public string Email { get; set; }
 
-        [Required]
+        [Required(ErrorMessage = "O telefone é obrigatório.")]
         [Phone(ErrorMessage =" Telefone inválido. ")]
         public string Telefone { get; set; }
     }
