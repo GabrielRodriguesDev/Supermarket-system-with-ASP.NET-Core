@@ -19,7 +19,7 @@ namespace Supermarket_system_with_ASP.NET_Core.Controllers
         }
 
         public IActionResult Categorias(){
-            var categorias = this._database.Categorias.ToList();
+            var categorias = this._database.Categorias.Where(categoria => categoria.Status == true).ToList();
             return View(categorias);
         }
 

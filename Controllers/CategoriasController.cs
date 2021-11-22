@@ -30,5 +30,27 @@ namespace Supermarket_system_with_ASP.NET_Core.Controllers
                 return View("../Gestao/NovaCategoria");
             }
         }
+
+        [HttpPost]
+        public IActionResult Atualizar(CategoriaDTO categoriaTemporaria){
+            if(ModelState.IsValid) {
+                var categoria = this._database.Categorias.First(categoria => categoria.Id == categoriaTemporaria.Id);
+                categoria.Nome = categoriaTemporaria.Nome;
+                this._database.SaveChanges();
+                return RedirectToAction("Categorias","Gestao");
+            } else {
+                return View("../Gestao/EditarCategoria");
+            }
+        }
+
+        [HttpPost]
+        public IActionResult Deletar(int id){
+            if(id > 0) {
+                var categoria = this._database.Categorias.First(categoria => categoria.Id == id);
+                categoria.Status = false;
+                this._database.SaveChanges();
+            }
+            return RedirectToAction("Categorias","Gestao");
+        }
     }
 }
