@@ -1,0 +1,29 @@
+@model Supermarket_system_with_ASP.NET_Core.DTO.FornecedorDTO; 
+
+<!--
+Como estamos recebendo lidando com um objeto do tipo FornecedorDTO e na rota estamos passando um objeto desse tipo já criado,
+o ASP.NET automaticamente atribui o asp-for ao objeto que foi passado pela action, sendo assim ele já exibe ele na tela.-->
+
+@{
+    Layout = "_LayoutAdmin";
+}
+
+<h3>Editar Fornecedor</h3>
+<hr>
+<form class="form-horizontal" asp-controller="Fornecedores" asp-action="Atualizar" >
+    <input type="hidden" asp-for="Id">
+    
+    <label asp-for="Nome">Nome</label>
+    <input type="text" asp-for="Nome" class="form-control" placeholder="Nome do Fornecedor"><br>
+    <span asp-validation-for="Nome"></span><br>
+
+    <label asp-for="Email">E-mail</label>
+    <input type="email" asp-for="Email" class="form-control" placeholder="email@fornecedor.com"><br>
+    <span asp-validation-for="Email"></span><br>
+
+    <label asp-for="Telefone">Telefone</label>
+    <input asp-for="Telefone" class="form-control" placeholder="11 998786-8785"><br>
+    <span asp-validation-for="Telefone"></span><br>
+
+    <button class="btn btn-success">Atualizar</button>
+</form>

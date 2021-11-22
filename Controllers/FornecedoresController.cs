@@ -35,5 +35,32 @@ namespace Supermarket_system_with_ASP.NET_Core.Controllers
                 return View("../Gestao/NovoFornecedor");
             }
         }
+
+        [HttpPost]
+        public IActionResult Atualizar(FornecedorDTO fornecedorTemporario) {
+            if(ModelState.IsValid){
+                var fornecedor = this._database.Fornecedores.First(fornecedor => fornecedor.Id == fornecedorTemporario.Id);
+                fornecedor.Nome = fornecedorTemporario.Nome;
+                fornecedor.Email = fornecedorTemporario.Email;
+                fornecedor.Telefone = fornecedorTemporario.Telefone;
+                this._database.SaveChanges();
+                return RedirectToAction("Fornecedores","Gestao");
+            } else {
+                return View("../Gestao/EditarFornecedor");
+            }
+            
+        }
+
+
+        [HttpPost]
+        public IActionResult Deletar (int id){
+            if(id > 0){
+                var fornecedor = this._database.Fornecedores.First(fornecedor => fornecedor.Id == id);
+                fornecedor.Status = false;
+                this._database.SaveChanges();
+            }
+            return RedirectToAction("Fornecedores","Gestao");
+
+        }
     }
 }

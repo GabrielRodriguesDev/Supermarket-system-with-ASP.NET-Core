@@ -36,11 +36,21 @@ namespace Supermarket_system_with_ASP.NET_Core.Controllers
         }
 
         public IActionResult Fornecedores(){
-            return View();
+            var fornecedores = this._database.Fornecedores.Where(fornecedores => fornecedores.Status == true).ToList();
+            return View(fornecedores);
         }
 
         public IActionResult NovoFornecedor(){
             return View();
+        }
+
+        public IActionResult EditarFornecedor(int id) {
+                var fornecedor = this._database.Fornecedores.First(fornecedor => fornecedor.Id == id);
+                FornecedorDTO fornecedorView = new FornecedorDTO();
+                fornecedorView.Nome = fornecedor.Nome;
+                fornecedorView.Email = fornecedor.Email;
+                fornecedorView.Telefone = fornecedor.Telefone;
+                return View(fornecedorView);
         }
 
         public IActionResult Produtos(){

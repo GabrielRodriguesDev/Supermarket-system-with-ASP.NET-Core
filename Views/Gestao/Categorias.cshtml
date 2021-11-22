@@ -1,4 +1,4 @@
-@model IEnumerable<Categoria>
+@model IEnumerable<Categoria> // Tipando o dado recebido - Que é uma lista de Categorias (Está sendo fornecida pela action de algum controler)
 
 @{
     Layout = "_LayoutAdmin";
@@ -12,7 +12,6 @@
 <script>
     $(document).ready( function () {
         $('#categorias').DataTable();
-        console.log("Salve");
     } );
 </script>
 
