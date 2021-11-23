@@ -40,5 +40,21 @@ namespace Supermarket_system_with_ASP.NET_Core.Controllers
             }
             
         }
+
+        public IActionResult Atualizar (ProdutoDTO produtoTemporario){
+            if(ModelState.IsValid){
+                var produto = this._database.Produtos.First(produto => produto.Id == produtoTemporario.Id);
+                produto.Nome = produtoTemporario.Nome;
+                produto.Categoria = this._database.Categorias.First(categoria => categoria.Id == produtoTemporario.CategoriaID);
+                produto.Fornecedor = this._database.Fornecedores.First(fornecedor => fornecedor.Id == produtoTemporario.FornecedorID);
+                produto.PrecoDeCusto = produtoTemporario.PrecoDeCusto;
+                produto.PrecoDeVenda = produtoTemporario.PrecoDeVenda;
+                produto.Medicao = produtoTemporario.Medicao;
+                this._database.SaveChanges();
+                return RedirectToAction("Produtos","Gestao");
+            } else {
+                return RedirectToAction("Produtos","Gestao");
+            }
+        }
     }
 }

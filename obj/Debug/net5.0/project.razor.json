@@ -15649,6 +15649,11 @@
       "FileKind": "mvc"
     },
     {
+      "FilePath": "d:\\Technology\\Sistemas\\Gabriel\\ASPNET\\SchoolOfNet\\Supermarket-system-with-ASP.NET-Core\\Views\\Gestao\\EditarProduto.cshtml",
+      "TargetPath": "Views\\Gestao\\EditarProduto.cshtml",
+      "FileKind": "mvc"
+    },
+    {
       "FilePath": "d:\\Technology\\Sistemas\\Gabriel\\ASPNET\\SchoolOfNet\\Supermarket-system-with-ASP.NET-Core\\Views\\Gestao\\NovoProduto.cshtml",
       "TargetPath": "Views\\Gestao\\NovoProduto.cshtml",
       "FileKind": "mvc"

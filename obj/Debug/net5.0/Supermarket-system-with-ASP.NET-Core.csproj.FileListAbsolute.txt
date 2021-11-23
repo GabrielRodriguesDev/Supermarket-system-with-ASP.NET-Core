@@ -70,3 +70,4 @@ D:\Technology\Sistemas\Gabriel\ASPNET\SchoolOfNet\Supermarket-system-with-ASP.NE
 D:\Technology\Sistemas\Gabriel\ASPNET\SchoolOfNet\Supermarket-system-with-ASP.NET-Core\obj\Debug\net5.0\Razor\Views\Gestao\Produtos.cshtml.g.cs
 D:\Technology\Sistemas\Gabriel\ASPNET\SchoolOfNet\Supermarket-system-with-ASP.NET-Core\obj\Debug\net5.0\Razor\Views\Gestao\EditarCategoria.cshtml.g.cs
 D:\Technology\Sistemas\Gabriel\ASPNET\SchoolOfNet\Supermarket-system-with-ASP.NET-Core\obj\Debug\net5.0\Razor\Views\Gestao\EditarFornecedor.cshtml.g.cs
+D:\Technology\Sistemas\Gabriel\ASPNET\SchoolOfNet\Supermarket-system-with-ASP.NET-Core\obj\Debug\net5.0\Razor\Views\Gestao\EditarProduto.cshtml.g.cs

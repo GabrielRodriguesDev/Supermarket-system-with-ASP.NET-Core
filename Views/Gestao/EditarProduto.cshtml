@@ -1,0 +1,57 @@
+@model Supermarket_system_with_ASP.NET_Core.DTO.ProdutoDTO; 
+
+<!--
+Como estamos recebendo lidando com um objeto do tipo FornecedorDTO e na rota estamos passando um objeto desse tipo já criado,
+o ASP.NET automaticamente atribui o asp-for ao objeto que foi passado pela action, sendo assim ele já exibe ele na tela.-->
+
+@{
+    Layout = "_LayoutAdmin";
+}
+
+<h3>Editar Produto</h3>
+<form class="form-horizontal" asp-controller="Produtos" asp-action="Atualizar" >
+    <div class="form-group">
+    <input type="hidden" asp-for="Id">
+    </div>
+    
+    <div class="form-group">
+    <label asp-for="Nome">Nome</label>
+    <input type="text" asp-for="Nome" class="form-control" placeholder="Nome do Produto">
+    <span asp-validation-for="Nome"></span>
+    </div>
+
+    <div class="form-group">
+    <label asp-for="CategoriaID">Categoria</label>
+    <select class="form-control" asp-for="CategoriaID"
+    asp-items='@(new SelectList(@ViewBag.Categorias, "Id","Nome"))'></select>
+    </div>
+
+    <div class="form-group">
+    <label asp-for="FornecedorID">Fornecedor</label>
+    <select class="form-control" asp-for="FornecedorID"
+    asp-items='@(new SelectList(@ViewBag.Fornecedores, "Id","Nome"))'></select>
+    </div>
+
+    <div class="form-group">
+    <label asp-for="PrecoDeCusto">Preço de Custo</label>
+    <input class="form-control" type="number" step="any" asp-for="PrecoDeCusto" placeholder="5.99">
+    <span asp-validation-for="PrecoDeCusto"></span>
+    </div>
+
+    <div class="form-group">
+    <label asp-for="PrecoDeVenda">Preço de Venda</label>
+    <input class="form-control" type="number" step="any" asp-for="PrecoDeVenda" placeholder="10.99">
+        <span asp-validation-for="PrecoDeVenda"></span>
+    </div>
+
+    <div class="form-group">
+        <label asp-for="Medicao">Medição</label>
+        <select  class="form-control" asp-for="Medicao">
+            <option value="0"> Litro </option>
+            <option value="1"> Kilo </option>
+            <option value="2"> Unidade </option>
+        </select>
+    </div>
+    
+    <button class="btn btn-success">Atualizar</button>
+</form>
