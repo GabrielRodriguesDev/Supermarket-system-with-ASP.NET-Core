@@ -1,6 +1,7 @@
 using System;
 using System.Linq;
 using Microsoft.AspNetCore.Mvc;
+using Microsoft.EntityFrameworkCore;
 using Supermarket_system_with_ASP.NET_Core.Data;
 using Supermarket_system_with_ASP.NET_Core.DTO;
 
@@ -53,8 +54,14 @@ namespace Supermarket_system_with_ASP.NET_Core.Controllers
                 return View(fornecedorView);
         }
 
-        public IActionResult Produtos(){
-            return View();
+        public IActionResult Produtos(){ // Include() Inclui as entidades relacionadas
+            var produtos = this._database.Produtos
+            .Where(produto => produto.Status == true)
+            .Include(produto => produto.Categoria)
+            .Include(produto => produto.Fornecedor)
+            .ToList();
+
+            return View(produtos);
         }
 
         public IActionResult NovoProduto(){
