@@ -1,4 +1,4 @@
-@model Supermarket_system_with_ASP.NET_Core.DTO.CategoriaDTO; //Tipando o Form - 
+@model Supermarket_system_with_ASP.NET_Core.DTO.CategoriaDTO; //Tipando o Form -
 
 @{
     Layout = "_LayoutAdmin";
@@ -6,13 +6,15 @@
 
 <h3>Nova Categoria</h3>
 <hr>
-<form class="form-horizontal" asp-controller="Categorias" asp-action="Salvar" >
-    <input type="hidden" asp-for="Id" value="0">
-    <label asp-for="Nome">Nome</label>
-    <input type="text" asp-for="Nome" class="form-control" placeholder="Nome da Categoria">
-    <span asp-validation-for="Nome"></span>
-    
-    <br>
-    <br>
+<form class="form-horizontal" asp-controller="Categorias" asp-action="Salvar">
+    <div class="form-group">
+        <input type="hidden" asp-for="Id" value="0">
+    </div>
+
+    <div class="form-group">
+        <label asp-for="Nome">Nome</label>
+        <input type="text" asp-for="Nome" class="form-control" placeholder="Nome da Categoria">
+        <span asp-validation-for="Nome"></span>
+    </div>
     <button class="btn btn-success">Cadastrar</button>
 </form>

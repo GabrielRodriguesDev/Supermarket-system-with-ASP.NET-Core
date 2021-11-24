@@ -66,8 +66,8 @@ namespace Supermarket_system_with_ASP.NET_Core.Controllers
         }
 
         public IActionResult NovoProduto(){
-            ViewBag.Categorias = this._database.Categorias.ToList();
-            ViewBag.Fornecedores = this._database.Fornecedores.ToList();
+            ViewBag.Categorias = this._database.Categorias.Where(categoria => categoria.Status == true).ToList();
+            ViewBag.Fornecedores = this._database.Fornecedores.Where(fornecedor => fornecedor.Status == true).ToList();
 
             return View();
         }
@@ -87,6 +87,16 @@ namespace Supermarket_system_with_ASP.NET_Core.Controllers
             produtoView.PrecoDeVenda = produto.PrecoDeVenda;
             produtoView.Medicao = produto.Medicao;
             return View(produtoView);
+        }
+
+        public IActionResult Promocoes() {
+            return View();
+        }
+
+        public IActionResult NovaPromocao() {
+            ViewBag.Produtos = this._database.Produtos.Where(produto => produto.Status == true).ToList();
+            
+            return View();
         }
     }
 }

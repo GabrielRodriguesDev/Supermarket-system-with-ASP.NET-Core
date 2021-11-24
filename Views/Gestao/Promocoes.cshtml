@@ -1,0 +1,13 @@
+@model IEnumerable<Categoria> // Tipando o dado recebido - Que é uma lista de Categorias (Está sendo fornecida pela action de algum controler)
+
+@{
+    Layout = "_LayoutAdmin";
+}
+
+<h2>Promoções
+</h2>
+<hr>
+<a asp-controller="Gestao" asp-action="NovaPromocao" class="btn btn-success"> Criar nova Promoção </a>
+<hr>
+
+
