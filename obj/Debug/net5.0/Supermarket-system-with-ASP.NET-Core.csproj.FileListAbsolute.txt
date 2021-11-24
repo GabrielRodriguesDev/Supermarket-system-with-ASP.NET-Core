@@ -73,3 +73,4 @@ D:\Technology\Sistemas\Gabriel\ASPNET\SchoolOfNet\Supermarket-system-with-ASP.NE
 D:\Technology\Sistemas\Gabriel\ASPNET\SchoolOfNet\Supermarket-system-with-ASP.NET-Core\obj\Debug\net5.0\Razor\Views\Gestao\EditarProduto.cshtml.g.cs
 D:\Technology\Sistemas\Gabriel\ASPNET\SchoolOfNet\Supermarket-system-with-ASP.NET-Core\obj\Debug\net5.0\Razor\Views\Gestao\NovaPromocao.cshtml.g.cs
 D:\Technology\Sistemas\Gabriel\ASPNET\SchoolOfNet\Supermarket-system-with-ASP.NET-Core\obj\Debug\net5.0\Razor\Views\Gestao\Promocoes.cshtml.g.cs
+D:\Technology\Sistemas\Gabriel\ASPNET\SchoolOfNet\Supermarket-system-with-ASP.NET-Core\obj\Debug\net5.0\Razor\Views\Gestao\EditarPromocao.cshtml.g.cs

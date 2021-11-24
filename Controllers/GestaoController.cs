@@ -99,5 +99,18 @@ namespace Supermarket_system_with_ASP.NET_Core.Controllers
             
             return View();
         }
+
+        public IActionResult EditarPromocao(int Id){
+            ViewBag.Produtos = this._database.Produtos.Where(produto => produto.Status == true).ToList();
+
+            var promocao = this._database.Promocoes.Include(promocao => promocao.Produto).First(promocao => promocao.Id == Id);
+
+            PromocaoDTO promocaoView  = new PromocaoDTO();
+            promocaoView.Id = promocao.Id;
+            promocaoView.Nome = promocao.Nome;
+            promocaoView.ProdutoID = promocao.Produto.Id; 
+            promocaoView.Porcentagem = promocao.Porcentagem;
+            return View(promocaoView);
+        }
     }
 }

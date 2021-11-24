@@ -53,7 +53,9 @@ namespace Supermarket_system_with_ASP.NET_Core.Controllers
                 this._database.SaveChanges();
                 return RedirectToAction("Produtos","Gestao");
             } else {
-                return RedirectToAction("Produtos","Gestao");
+                ViewBag.Categorias = this._database.Categorias.ToList();
+                ViewBag.Fornecedores = this._database.Fornecedores.ToList();
+                return View("../Gestao/EditarProduto");
             }
         }
 
