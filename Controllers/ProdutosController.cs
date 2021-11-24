@@ -56,5 +56,16 @@ namespace Supermarket_system_with_ASP.NET_Core.Controllers
                 return RedirectToAction("Produtos","Gestao");
             }
         }
+
+        public IActionResult Deletar (int Id){
+            if(Id > 0) {
+                var produto = this._database.Produtos.First(produto => produto.Id == Id);
+                produto.Status = false;
+                this._database.SaveChanges();
+            } 
+                return RedirectToAction("Produtos","Gestao");
+
+            
+        }
     }
 }
