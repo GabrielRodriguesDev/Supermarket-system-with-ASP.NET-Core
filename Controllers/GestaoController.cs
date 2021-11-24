@@ -90,7 +90,8 @@ namespace Supermarket_system_with_ASP.NET_Core.Controllers
         }
 
         public IActionResult Promocoes() {
-            return View();
+            var promocoes = this._database.Promocoes.Where(promocao => promocao.Status == true).Include(promocao => promocao.Produto).ToList();
+            return View(promocoes);
         }
 
         public IActionResult NovaPromocao() {

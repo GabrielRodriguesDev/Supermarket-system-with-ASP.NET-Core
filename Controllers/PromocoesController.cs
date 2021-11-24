@@ -25,6 +25,7 @@ namespace Supermarket_system_with_ASP.NET_Core.Controllers
                 promocao.Nome = promocaoTemporaria.Nome;
                 promocao.Produto = this._database.Produtos.First(produto => produto.Id == promocaoTemporaria.ProdutoID);
                 promocao.Porcentagem = promocaoTemporaria.Porcentagem;
+                promocao.Status = true;
                 this._database.Promocoes.Add(promocao);
                 this._database.SaveChanges();
                 return RedirectToAction("Promocoes","Gestao");
