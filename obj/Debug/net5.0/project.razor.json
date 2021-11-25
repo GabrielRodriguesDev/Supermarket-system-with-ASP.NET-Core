@@ -15624,11 +15624,6 @@
       "FileKind": "mvc"
     },
     {
-      "FilePath": "d:\\Technology\\Sistemas\\Gabriel\\ASPNET\\SchoolOfNet\\Supermarket-system-with-ASP.NET-Core\\Views\\Shared\\_Layout.cshtml",
-      "TargetPath": "Views\\Shared\\_Layout.cshtml",
-      "FileKind": "mvc"
-    },
-    {
       "FilePath": "d:\\Technology\\Sistemas\\Gabriel\\ASPNET\\SchoolOfNet\\Supermarket-system-with-ASP.NET-Core\\Views\\Gestao\\NovaCategoria.cshtml",
       "TargetPath": "Views\\Gestao\\NovaCategoria.cshtml",
       "FileKind": "mvc"

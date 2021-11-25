@@ -46,10 +46,6 @@ D:\Technology\Sistemas\Gabriel\ASPNET\SchoolOfNet\Supermarket-system-with-ASP.NE
 D:\Technology\Sistemas\Gabriel\ASPNET\SchoolOfNet\Supermarket-system-with-ASP.NET-Core\obj\Debug\net5.0\Razor\Areas\Identity\Pages\_ViewStart.cshtml.g.cs
 D:\Technology\Sistemas\Gabriel\ASPNET\SchoolOfNet\Supermarket-system-with-ASP.NET-Core\obj\Debug\net5.0\Razor\Views\Home\Index.cshtml.g.cs
 D:\Technology\Sistemas\Gabriel\ASPNET\SchoolOfNet\Supermarket-system-with-ASP.NET-Core\obj\Debug\net5.0\Razor\Views\Home\Privacy.cshtml.g.cs
-D:\Technology\Sistemas\Gabriel\ASPNET\SchoolOfNet\Supermarket-system-with-ASP.NET-Core\obj\Debug\net5.0\Razor\Views\Shared\Error.cshtml.g.cs
-D:\Technology\Sistemas\Gabriel\ASPNET\SchoolOfNet\Supermarket-system-with-ASP.NET-Core\obj\Debug\net5.0\Razor\Views\Shared\_Layout.cshtml.g.cs
-D:\Technology\Sistemas\Gabriel\ASPNET\SchoolOfNet\Supermarket-system-with-ASP.NET-Core\obj\Debug\net5.0\Razor\Views\Shared\_LoginPartial.cshtml.g.cs
-D:\Technology\Sistemas\Gabriel\ASPNET\SchoolOfNet\Supermarket-system-with-ASP.NET-Core\obj\Debug\net5.0\Razor\Views\Shared\_ValidationScriptsPartial.cshtml.g.cs
 D:\Technology\Sistemas\Gabriel\ASPNET\SchoolOfNet\Supermarket-system-with-ASP.NET-Core\obj\Debug\net5.0\Razor\Views\_ViewImports.cshtml.g.cs
 D:\Technology\Sistemas\Gabriel\ASPNET\SchoolOfNet\Supermarket-system-with-ASP.NET-Core\obj\Debug\net5.0\Razor\Views\_ViewStart.cshtml.g.cs
 D:\Technology\Sistemas\Gabriel\ASPNET\SchoolOfNet\Supermarket-system-with-ASP.NET-Core\obj\Debug\net5.0\Supermarket-system-with-ASP.NET-Core.RazorTargetAssemblyInfo.cache
@@ -60,7 +56,6 @@ D:\Technology\Sistemas\Gabriel\ASPNET\SchoolOfNet\Supermarket-system-with-ASP.NE
 D:\Technology\Sistemas\Gabriel\ASPNET\SchoolOfNet\Supermarket-system-with-ASP.NET-Core\obj\Debug\net5.0\ref\Supermarket-system-with-ASP.NET-Core.dll
 D:\Technology\Sistemas\Gabriel\ASPNET\SchoolOfNet\Supermarket-system-with-ASP.NET-Core\obj\Debug\net5.0\Supermarket-system-with-ASP.NET-Core.pdb
 D:\Technology\Sistemas\Gabriel\ASPNET\SchoolOfNet\Supermarket-system-with-ASP.NET-Core\obj\Debug\net5.0\Supermarket-system-with-ASP.NET-Core.genruntimeconfig.cache
-D:\Technology\Sistemas\Gabriel\ASPNET\SchoolOfNet\Supermarket-system-with-ASP.NET-Core\obj\Debug\net5.0\Razor\Views\Shared\_LayoutAdmin.cshtml.g.cs
 D:\Technology\Sistemas\Gabriel\ASPNET\SchoolOfNet\Supermarket-system-with-ASP.NET-Core\obj\Debug\net5.0\Razor\Views\Gestao\Index.cshtml.g.cs
 D:\Technology\Sistemas\Gabriel\ASPNET\SchoolOfNet\Supermarket-system-with-ASP.NET-Core\obj\Debug\net5.0\Razor\Views\Gestao\Categorias.cshtml.g.cs
 D:\Technology\Sistemas\Gabriel\ASPNET\SchoolOfNet\Supermarket-system-with-ASP.NET-Core\obj\Debug\net5.0\Razor\Views\Gestao\NovaCategoria.cshtml.g.cs
@@ -74,3 +69,7 @@ D:\Technology\Sistemas\Gabriel\ASPNET\SchoolOfNet\Supermarket-system-with-ASP.NE
 D:\Technology\Sistemas\Gabriel\ASPNET\SchoolOfNet\Supermarket-system-with-ASP.NET-Core\obj\Debug\net5.0\Razor\Views\Gestao\NovaPromocao.cshtml.g.cs
 D:\Technology\Sistemas\Gabriel\ASPNET\SchoolOfNet\Supermarket-system-with-ASP.NET-Core\obj\Debug\net5.0\Razor\Views\Gestao\Promocoes.cshtml.g.cs
 D:\Technology\Sistemas\Gabriel\ASPNET\SchoolOfNet\Supermarket-system-with-ASP.NET-Core\obj\Debug\net5.0\Razor\Views\Gestao\EditarPromocao.cshtml.g.cs
+D:\Technology\Sistemas\Gabriel\ASPNET\SchoolOfNet\Supermarket-system-with-ASP.NET-Core\obj\Debug\net5.0\Razor\Views\Shared\Error.cshtml.g.cs
+D:\Technology\Sistemas\Gabriel\ASPNET\SchoolOfNet\Supermarket-system-with-ASP.NET-Core\obj\Debug\net5.0\Razor\Views\Shared\_LayoutAdmin.cshtml.g.cs
+D:\Technology\Sistemas\Gabriel\ASPNET\SchoolOfNet\Supermarket-system-with-ASP.NET-Core\obj\Debug\net5.0\Razor\Views\Shared\_LoginPartial.cshtml.g.cs
+D:\Technology\Sistemas\Gabriel\ASPNET\SchoolOfNet\Supermarket-system-with-ASP.NET-Core\obj\Debug\net5.0\Razor\Views\Shared\_ValidationScriptsPartial.cshtml.g.cs
