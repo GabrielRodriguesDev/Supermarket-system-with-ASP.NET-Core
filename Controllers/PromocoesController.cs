@@ -35,7 +35,7 @@ namespace Supermarket_system_with_ASP.NET_Core.Controllers
             }
             
         }
-
+        [HttpPost]
         public IActionResult Atualizar (PromocaoDTO promocaoTemporaria){
             if(ModelState.IsValid){
                 var promocao = this._database.Promocoes.First(promocao => promocao.Id == promocaoTemporaria.Id);
@@ -45,9 +45,19 @@ namespace Supermarket_system_with_ASP.NET_Core.Controllers
                 this._database.SaveChanges();
                 return RedirectToAction("Promocoes","Gestao");
             } else {
-                ViewBag.Produtos = this._database.Produtos.ToList();
-                return View("../Gestao/EditarPromocao");
+                        return RedirectToAction("Promocoes","Gestao");
             }
+        }
+
+
+        [HttpPost]
+        public IActionResult Deletar (int id){
+            if(id > 0){
+                var promocao =this._database.Promocoes.First(promocao => promocao.Id == id);
+                promocao.Status = false;
+                this._database.SaveChanges();
+            }
+            return RedirectToAction("Promocoes","Gestao");
         }
     }
 }

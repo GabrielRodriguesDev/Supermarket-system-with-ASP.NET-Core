@@ -12,8 +12,23 @@
 
 <script>
     $(document).ready( function () {
-        $('#promocoes').DataTable();
-    } );
+        $('#promocoes').DataTable({
+            "bInfo" : false,
+            "language": {
+                "lengthMenu": "Mostrando _MENU_ registros por página",
+                "zeroRecords": "Nada encontrado",
+                "info": "Mostrando página _PAGE_ de _PAGES_",
+                "infoEmpty": "Nenhum registro disponível",
+                "search": "Buscar:",
+                "paginate": {
+                    "first": "Primeiro",
+                    "last": "Último",
+                    "next": "Próximo",
+                    "previous": "Anterior"
+                }
+            }
+        });
+    });
 </script>
 
 <table id="promocoes" class="table table-striped- table-bordered">
@@ -23,6 +38,8 @@
             <th>Nome</th>
             <th>Produto</th>
             <th>Porcentagem</th>
+            <th>Ações</th>
+
         </tr>
     </thead>
     <tbody>
