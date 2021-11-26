@@ -6,6 +6,7 @@ using Microsoft.AspNetCore.Mvc;
 using Supermarket_system_with_ASP.NET_Core.DTO;
 using Supermarket_system_with_ASP.NET_Core.Data;
 using Supermarket_system_with_ASP.NET_Core.Models;
+using Microsoft.EntityFrameworkCore;
 
 namespace Supermarket_system_with_ASP.NET_Core.Controllers
 {
@@ -41,6 +42,7 @@ namespace Supermarket_system_with_ASP.NET_Core.Controllers
             
         }
 
+        [HttpPost]
         public IActionResult Atualizar (ProdutoDTO produtoTemporario){
             if(ModelState.IsValid){
                 var produto = this._database.Produtos.First(produto => produto.Id == produtoTemporario.Id);
@@ -59,6 +61,7 @@ namespace Supermarket_system_with_ASP.NET_Core.Controllers
             }
         }
 
+        [HttpPost]
         public IActionResult Deletar (int Id){
             if(Id > 0) {
                 var produto = this._database.Produtos.First(produto => produto.Id == Id);
@@ -66,7 +69,23 @@ namespace Supermarket_system_with_ASP.NET_Core.Controllers
                 this._database.SaveChanges();
             } 
                 return RedirectToAction("Produtos","Gestao");
+        }
 
+        [HttpPost]
+        public IActionResult Produto (int id){
+            if(id > 0) {
+                var produto = this._database.Produtos.Where(produto => produto.Status == true).Include(produto => produto.Categoria).Include(produto => produto.Fornecedor).FirstOrDefault(produto => produto.Id == id);
+                if(produto != null) {
+                    Response.StatusCode = 200;
+                    return Json(produto);
+                } else {
+                    Response.StatusCode = 404;
+                    return Json(null);
+                }
+                
+            }
+            Response.StatusCode = 404;
+            return Json(null);
             
         }
     }
