@@ -112,5 +112,18 @@ namespace Supermarket_system_with_ASP.NET_Core.Controllers
             promocaoView.Porcentagem = promocao.Porcentagem;
             return View(promocaoView);
         }
+
+        public IActionResult Estoque() {
+            return View();
+        }
+
+        public IActionResult NovoEstoque(){
+            ViewBag.Produtos = this._database.Produtos.Where(produto => produto.Status == true).ToList();
+            return View();
+        }
+
+        public IActionResult EditarEstoque() {
+            return Content("");
+        }
     }
 }
