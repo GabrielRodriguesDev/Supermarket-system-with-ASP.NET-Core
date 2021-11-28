@@ -3,6 +3,7 @@
 
 var enderecoProduto = "https://localhost:5001/Produtos/Produto/";
 var produto;
+var compra = [];
 /* */
 
 /* Funções */
@@ -25,6 +26,9 @@ function zerarFormulario () {
 
 
 function adicionarNaTabela(p,q) {
+    var produtoTemp = {}; // Criando um variavel que vai receber um Objeto (clonado)
+    Object.assign(produtoTemp, produto);// Clonando o objeto em uma instancia nova
+    compra.push(produtoTemp) // Adicionando no array
     $("#compras").append(`
     <tr>
     <td>${p.id}</td>
