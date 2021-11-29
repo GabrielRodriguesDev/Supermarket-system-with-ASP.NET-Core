@@ -20,7 +20,7 @@ namespace Supermarket_system_with_ASP.NET_Core.Data
         public DbSet<Produto> Produtos {get;set;}
 
         public DbSet<Promocao> Promocoes {get;set;}
-        public DbSet<Estoque> Estoques {get;set;}
+        public DbSet<Estoque> Estoque {get;set;}
 
         public DbSet<Saida> Saidas {get;set;}
 

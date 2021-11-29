@@ -11,6 +11,8 @@ namespace Supermarket_system_with_ASP.NET_Core.Models
 
         public Produto  Produto { get; set; }
 
+        public int  ProdutoId { get; set; }
+
         public float Quantidade { get; set; }
     }
 }
