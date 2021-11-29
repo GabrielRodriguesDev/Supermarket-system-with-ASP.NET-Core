@@ -1,4 +1,4 @@
-@model IEnumerable<Produto> // Tipando o dado recebido - Que é uma lista de Produtos (Está sendo fornecida pela action de algum controler)
+@model IEnumerable<Estoque> // Tipando o dado recebido - Que é uma lista de Estoque (Está sendo fornecida pela action de algum controler)
 @{
     Layout = "_LayoutAdmin";
 }
@@ -7,3 +7,53 @@
 <hr>
 <a asp-controller="Gestao" asp-action="NovoEstoque" class="btn btn-success"> Criar novo Estoque </a>
 <hr>
+
+
+<script>
+    $(document).ready( function () {
+        $('#estoque').DataTable({
+            "bInfo" : false,
+            "language": {
+                "lengthMenu": "Mostrando _MENU_ registros por página",
+                "zeroRecords": "Nada encontrado",
+                "info": "Mostrando página _PAGE_ de _PAGES_",
+                "infoEmpty": "Nenhum registro disponível",
+                "search": "Buscar:",
+                "paginate": {
+                    "first": "Primeiro",
+                    "last": "Último",
+                    "next": "Próximo",
+                    "previous": "Anterior"
+                }
+            }
+        });
+    });
+</script>
+
+<table id="estoque" class="table table-striped- table-bordered">
+    <thead>
+        <tr>
+            <th>Id</th>
+            <th>Produto</th>
+            <th>Quantidade</th>
+            <th>Ações</th>
+        </tr>
+    </thead>
+    <tbody>
+        @foreach (var estoque in Model)
+        {
+            <tr>
+                <td>@estoque.Id</td>
+                <td>@estoque.Produto.Nome</td>
+                <td>@estoque.Quantidade</td>
+                <td>
+                    <a class="btn btn-outline-primary" role="button" aria-pressed="true" href="/Gestao/EditarEstoque/@estoque.Id">Editar</a> 
+                    <form asp-controller="Fornecedores" asp-action="Deletar" style="display: inline;">
+                        <input hidden type="text" name="id" id="id" value="@estoque.Id">
+                        <button class="btn btn-outline-danger" role="button" aria-pressed="true">Deletar</button>
+                    </form>
+                </td>
+            </tr>
+        }
+    </tbody>
+</table>

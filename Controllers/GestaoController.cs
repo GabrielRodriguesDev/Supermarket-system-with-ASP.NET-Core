@@ -114,7 +114,8 @@ namespace Supermarket_system_with_ASP.NET_Core.Controllers
         }
 
         public IActionResult Estoque() {
-            return View();
+            var listaEstoque =this._database.Estoque.Include(estoque => estoque.Produto).Where(estoque => estoque.Quantidade > 0).ToList();
+            return View(listaEstoque);
         }
 
         public IActionResult NovoEstoque(){
