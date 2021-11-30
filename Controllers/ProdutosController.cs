@@ -7,6 +7,7 @@ using Supermarket_system_with_ASP.NET_Core.DTO;
 using Supermarket_system_with_ASP.NET_Core.Data;
 using Supermarket_system_with_ASP.NET_Core.Models;
 using Microsoft.EntityFrameworkCore;
+using System.Globalization;
 
 namespace Supermarket_system_with_ASP.NET_Core.Controllers
 {
@@ -22,11 +23,12 @@ namespace Supermarket_system_with_ASP.NET_Core.Controllers
         public IActionResult Salvar(ProdutoDTO produtoTemporario){
             if(ModelState.IsValid){
                 Produto produto = new Produto();
+                Console.WriteLine(CultureInfo.InvariantCulture.NumberFormat);   
                 produto.Nome = produtoTemporario.Nome;
                 produto.Categoria = this._database.Categorias.First(categoria => categoria.Id == produtoTemporario.CategoriaID);
                 produto.Fornecedor = this._database.Fornecedores.First(fornecedor => fornecedor.Id == produtoTemporario.FornecedorID);
-                produto.PrecoDeCusto = produtoTemporario.PrecoDeCusto;
-                produto.PrecoDeVenda = produtoTemporario.PrecoDeVenda; 
+                produto.PrecoDeCusto = float.Parse(produtoTemporario.PrecoDeCustoString, CultureInfo.InvariantCulture.NumberFormat);
+                produto.PrecoDeVenda = float.Parse(produtoTemporario.PrecoDeVendaString, CultureInfo.InvariantCulture.NumberFormat); 
                 produto.Medicao = produtoTemporario.Medicao;
                 produto.Status = true;
                 this._database.Produtos.Add(produto);
@@ -49,8 +51,8 @@ namespace Supermarket_system_with_ASP.NET_Core.Controllers
                 produto.Nome = produtoTemporario.Nome;
                 produto.Categoria = this._database.Categorias.First(categoria => categoria.Id == produtoTemporario.CategoriaID);
                 produto.Fornecedor = this._database.Fornecedores.First(fornecedor => fornecedor.Id == produtoTemporario.FornecedorID);
-                produto.PrecoDeCusto = produtoTemporario.PrecoDeCusto;
-                produto.PrecoDeVenda = produtoTemporario.PrecoDeVenda;
+                produto.PrecoDeCusto = float.Parse(produtoTemporario.PrecoDeCustoString, CultureInfo.InvariantCulture.NumberFormat);
+                produto.PrecoDeVenda = float.Parse(produtoTemporario.PrecoDeVendaString, CultureInfo.InvariantCulture.NumberFormat); 
                 produto.Medicao = produtoTemporario.Medicao;
                 this._database.SaveChanges();
                 return RedirectToAction("Produtos","Gestao");

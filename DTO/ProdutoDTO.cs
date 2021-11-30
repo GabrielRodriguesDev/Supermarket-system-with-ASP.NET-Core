@@ -25,9 +25,14 @@ namespace Supermarket_system_with_ASP.NET_Core.DTO
 
         [Required(ErrorMessage ="O preço de custo do produto é obrigatório.")]
         public float PrecoDeCusto { get; set; }
-
+        
+        [Required(ErrorMessage ="O preço de custo do produto é obrigatório.")]
+        public String PrecoDeCustoString { get; set; }
         [Required(ErrorMessage ="O preço de venda do produto é obrigatório.")]
         public float PrecoDeVenda { get; set; }
+
+        [Required(ErrorMessage ="O preço de venda do produto é obrigatório.")]
+        public String PrecoDeVendaString { get; set; }
 
         [Required(ErrorMessage ="A medição do produto é obrigatória.")]
         [Range(0,2, ErrorMessage = "Medição inválida.")]
