@@ -58,6 +58,12 @@ $("#produtoForm").on("submit", function(event){
     }
 });
 
+$('#finalizarCompra').click(function () {
+    $('#myModal').modal('toggle');
+})
+
+
+
 
 /*Ajax */
 $("#pesquisar").click(function() {
