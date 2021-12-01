@@ -4,7 +4,17 @@
 var enderecoProduto = "https://localhost:5001/Produtos/Produto/";
 var produto;
 var compra = [];
+var __totalVenda__ = 0.00;
 /* */
+
+/*Inicio*/
+atualizarTotal();
+
+
+/* */ 
+function atualizarTotal() {
+    $("#totalVenda").html(__totalVenda__);
+}
 
 /* Funções */
 function preencherFormulario(dadosProduto) {
@@ -28,7 +38,13 @@ function zerarFormulario () {
 function adicionarNaTabela(p,q) {
     var produtoTemp = {}; // Criando um variavel que vai receber um Objeto (clonado)
     Object.assign(produtoTemp, produto);// Clonando o objeto em uma instancia nova
-    compra.push(produtoTemp) // Adicionando no array
+
+    var venda = {produto: produtoTemp, quantidade: q, subtotal: produtoTemp.precoDeVenda * q}
+    compra.push(venda) // Adicionando no array
+
+    __totalVenda__ += venda.subtotal;
+    atualizarTotal()
+    
     $("#compras").append(`
     <tr>
     <td>${p.id}</td>
