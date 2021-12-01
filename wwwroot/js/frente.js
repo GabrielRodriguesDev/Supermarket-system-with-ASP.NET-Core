@@ -109,3 +109,28 @@ $("#pesquisar").click(function() {
         $("#codProduto").val("")
     })
 })
+
+/* Finalizar venda */
+$("#finalizarVendaBtn").click( function(){
+
+    if (__totalVenda__ <= 0) {
+        alert("Compra inválida, nenhum produto adicionado.")
+        return;
+    }
+
+    var _valorPago = $("#valorPago").val()
+
+    if(!isNaN(_valorPago)) { // isNan() -> Válida se existe um número, por mais que seja do tipo string ele valida se existe um número / Se não for um numero retorna verdadeiro se for um numero retorna falso.
+        _valorPago = parseFloat(_valorPago);
+        if(_valorPago >= __totalVenda__) {
+            console.log(_valorPago);
+            console.log("Salve")
+        } else {
+            alert("Valor pago inferior ao total da venda.")
+            return;
+        }
+    } else {
+        alert("Valor pago inválido.")
+        return;
+    }
+})
