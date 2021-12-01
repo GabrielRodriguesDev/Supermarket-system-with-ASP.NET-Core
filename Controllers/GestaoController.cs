@@ -83,8 +83,8 @@ namespace Supermarket_system_with_ASP.NET_Core.Controllers
             produtoView.CategoriaID = produto.Categoria.Id;
             produtoView.FornecedorID = produto.Fornecedor.Id;
             produtoView.Nome = produto.Nome;
-            produtoView.PrecoDeCusto = produto.PrecoDeCusto;
-            produtoView.PrecoDeVenda = produto.PrecoDeVenda;
+            produtoView.PrecoDeCustoString = string.Format("{0:N2}",produto.PrecoDeCusto);
+            produtoView.PrecoDeVendaString = string.Format("{0:N2}",produto.PrecoDeVenda);
             produtoView.Medicao = produto.Medicao;
             return View(produtoView);
         }

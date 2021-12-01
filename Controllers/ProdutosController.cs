@@ -78,8 +78,18 @@ namespace Supermarket_system_with_ASP.NET_Core.Controllers
             if(id > 0) {
                 var produto = this._database.Produtos.Where(produto => produto.Status == true).Include(produto => produto.Categoria).Include(produto => produto.Fornecedor).FirstOrDefault(produto => produto.Id == id);
                 if(produto != null) {
-                    Response.StatusCode = 200;
-                    return Json(produto);
+                    var estoque = this._database.Estoque.FirstOrDefault(estoque => estoque.Produto.Id == produto.Id);
+                    
+                    if(estoque != null) {
+                        Response.StatusCode = 200;  
+                        return Json(produto);
+                    } else {
+                        produto = null;
+                        Response.StatusCode = 404;
+                        return Json(produto);
+                    } 
+                    
+                
                 } else {
                     Response.StatusCode = 404;
                     return Json(null);
