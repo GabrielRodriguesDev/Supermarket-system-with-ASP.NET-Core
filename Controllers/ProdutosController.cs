@@ -89,7 +89,7 @@ namespace Supermarket_system_with_ASP.NET_Core.Controllers
                         Response.StatusCode = 200;  
                         return Json(produto);
                     } else {
-                        produto = null;
+                        produto = null; 
                         Response.StatusCode = 404;
                         return Json(produto);
                     } 
@@ -105,5 +105,18 @@ namespace Supermarket_system_with_ASP.NET_Core.Controllers
             return Json(null);
             
         }
+
+        [HttpPost]
+        public IActionResult GerarVenda([FromBody] ModeloVenda dados){
+            return Ok(dados);
     }
+
+    
+    public class ModeloVenda{
+        public int id;
+        public float valor;
+        public String nome;
+    }
+    }
+
 }
