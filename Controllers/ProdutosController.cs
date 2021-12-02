@@ -81,6 +81,11 @@ namespace Supermarket_system_with_ASP.NET_Core.Controllers
                     var estoque = this._database.Estoque.FirstOrDefault(estoque => estoque.Produto.Id == produto.Id);
                     
                     if(estoque != null) {
+
+                        var promocao = this._database.Promocoes.FirstOrDefault(promocao => promocao.Produto.Id == produto.Id && promocao.Status == true);
+                        if(promocao != null){
+                            produto.PrecoDeVenda -=(produto.PrecoDeVenda * promocao.Porcentagem/100); 
+                        }
                         Response.StatusCode = 200;  
                         return Json(produto);
                     } else {

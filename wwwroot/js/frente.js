@@ -121,6 +121,15 @@ $("#pesquisar").click(function() {
         }
         produto.medicao = med;
         preencherFormulario(produto);
+        var json = {
+            "proprietarioId":"bc913425-c23e-4592-aa81-cc64852cdb0",
+            "empresaId": "0cdbc938-c482-48cb-898c-35b632cdbcc7"
+            
+        }
+        
+        var json = JSON.stringify(json);
+        console.log(json)
+        
     }).fail(function(){
         alert("Produto inválido");
         $("#codProduto").val("")
