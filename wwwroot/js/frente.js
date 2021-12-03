@@ -147,8 +147,7 @@ $("#pesquisar").click(function() {
         produto.medicao = med;
         preencherFormulario(produto);
         
-        var json = JSON.stringify(json);
-        console.log(json)
+
         
     }).fail(function(){
         alert("Produto inválido");
@@ -163,8 +162,9 @@ $("#finalizarVendaBtn").click( function(){
         alert("Compra inválida, nenhum produto adicionado.")
         return;
     }
-
-    var _valorPago = $("#valorPago").val()
+    
+    var _valorPago =  0.00;
+    _valorPago = $("#valorPago").val()
 
     if(!isNaN(_valorPago)) { // isNan() -> Válida se existe um número, por mais que seja do tipo string ele valida se existe um número / Se não for um numero retorna verdadeiro se for um numero retorna falso.
         _valorPago = parseFloat(_valorPago);
@@ -180,7 +180,11 @@ $("#finalizarVendaBtn").click( function(){
 
             // Preparando um novo objeto
             var _venda = {total: __totalVenda__, troco: _troco, produtos: compra}
-        
+
+
+            console.log("Antes de enviar")
+            console.log(_venda)
+            
             //Enviar dador par ao backend
             enviandoVenda(_venda);
 

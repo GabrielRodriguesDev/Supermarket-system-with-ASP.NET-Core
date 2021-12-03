@@ -107,8 +107,17 @@ namespace Supermarket_system_with_ASP.NET_Core.Controllers
         }
 
         [HttpPost]
-        public IActionResult GerarVenda([FromBody] VendaDTO[] dados){
-            return Ok(dados);
+        public IActionResult GerarVenda([FromBody] VendaDTO dados){
+            // Gerando venda
+            Venda venda = new Venda();
+            venda.Total = dados.total;
+            venda.Troco = dados.troco;
+            venda.Pago = dados.troco <= 0.01f ? dados.total : dados.total + dados.troco;
+            venda.Data = DateTime.Now;
+            
+            this._database.Vendas.Add(venda);
+            this._database.SaveChanges();
+            return Ok(new{msg="Venda processada com sucesso!"});
     }
     }
 
