@@ -2,6 +2,7 @@
 /* Declaração de váriaveis*/
 
 var enderecoProduto = "https://localhost:5001/Produtos/Produto/";
+var enderecoGerarVenda = "https://localhost:5001/Produtos/gerarvenda/"
 var produto;
 var  compra = [];
 var __totalVenda__ = 0.00;
@@ -26,12 +27,15 @@ function modalConfirmed() {
 }
 
 function restaurandoModal() {
-    $("#posvenda").hide();
-    $("#prevenda").show();
-    $("#valorTroco").prop("disabled", false);
-    $("#valorPago").prop("disabled", false);
-    $("#valorTroco").val("");
-    $("#valorPago").val("");
+    setTimeout(() => {
+        $("#posvenda").hide();
+        $("#prevenda").show();
+        $("#valorTroco").prop("disabled", false);
+        $("#valorPago").prop("disabled", false);
+        $("#valorTroco").val("");
+        $("#valorPago").val("");
+    }, 1000);
+    
 }
 function preencherFormulario(dadosProduto) {
     $("#campoNome").val(dadosProduto.nome);
@@ -48,6 +52,28 @@ function zerarFormulario () {
     $("#campoFornecedor").val("")
     $("#campoPreco").val("");
     $("#campoQuantidade").val("");
+}
+
+function processaItensCompra() {
+    compra.forEach(element =>{
+        element.produto = element.produto.id
+    })
+
+    
+}
+
+function enviandoVenda(){
+    $.ajax({
+        type: "POST",
+        url: enderecoGerarVenda,
+        dataType: "json",
+        contentType: "application/json",
+        data: JSON.stringify(compra),
+        success: function(data) {
+            console.log("Dados envados com sucesso");
+            console.log(data);
+        }
+    })
 }
 
 
@@ -120,11 +146,6 @@ $("#pesquisar").click(function() {
         }
         produto.medicao = med;
         preencherFormulario(produto);
-        var json = {
-            "proprietarioId":"bc913425-c23e-4592-aa81-cc64852cdb0",
-            "empresaId": "0cdbc938-c482-48cb-898c-35b632cdbcc7"
-            
-        }
         
         var json = JSON.stringify(json);
         console.log(json)
@@ -152,6 +173,13 @@ $("#finalizarVendaBtn").click( function(){
             modalConfirmed();
             var _troco  = _valorPago - __totalVenda__;
             $("#valorTroco").val(_troco.toFixed(2));
+
+
+            //Processar o meu array de compra
+            processaItensCompra();
+
+            //Enviar dador par ao backend
+            enviandoVenda();
 
         } else {
             alert("Valor pago inferior ao total da venda.")
