@@ -107,15 +107,8 @@ namespace Supermarket_system_with_ASP.NET_Core.Controllers
         }
 
         [HttpPost]
-        public IActionResult GerarVenda([FromBody] ModeloVenda dados){
+        public IActionResult GerarVenda([FromBody] SaidaDTO dados){
             return Ok(dados);
-    }
-
-    
-    public class ModeloVenda{
-        public int id;
-        public float valor;
-        public String nome;
     }
     }
 

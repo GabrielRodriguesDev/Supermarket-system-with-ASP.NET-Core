@@ -3,7 +3,7 @@
 
 var enderecoProduto = "https://localhost:5001/Produtos/Produto/";
 var produto;
-var compra = [];
+var  compra = [];
 var __totalVenda__ = 0.00;
 /* */
 
@@ -76,8 +76,7 @@ function adicionarNaTabela(p,q) {
 
 $("#produtoForm").on("submit", function(event){
     event.preventDefault();
-    console.log("Antes");
-    console.log(produto);
+
     var produtoParaTabela = produto;
 
     var qtd = $("#campoQuantidade").val();
