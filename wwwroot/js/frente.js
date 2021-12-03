@@ -62,13 +62,13 @@ function processaItensCompra() {
     
 }
 
-function enviandoVenda(){
+function enviandoVenda(dataSend){
     $.ajax({
         type: "POST",
         url: enderecoGerarVenda,
         dataType: "json",
         contentType: "application/json",
-        data: JSON.stringify(compra),
+        data: JSON.stringify(dataSend),
         success: function(data) {
             console.log("Dados envados com sucesso");
             console.log(data);
@@ -178,8 +178,11 @@ $("#finalizarVendaBtn").click( function(){
             //Processar o meu array de compra
             processaItensCompra();
 
+            // Preparando um novo objeto
+            var _venda = {total: __totalVenda__, troco: _troco, produtos: compra}
+        
             //Enviar dador par ao backend
-            enviandoVenda();
+            enviandoVenda(_venda);
 
         } else {
             alert("Valor pago inferior ao total da venda.")
