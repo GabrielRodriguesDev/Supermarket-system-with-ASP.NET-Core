@@ -114,9 +114,26 @@ namespace Supermarket_system_with_ASP.NET_Core.Controllers
             venda.Troco = dados.troco;
             venda.Pago = dados.troco <= 0.01f ? dados.total : dados.total + dados.troco;
             venda.Data = DateTime.Now;
-            
             this._database.Vendas.Add(venda);
             this._database.SaveChanges();
+            
+            //Registrando saidas
+            List<Saida> saidas = new List<Saida>();
+            foreach (var saida in dados.produtos)
+            {
+                Saida s = new Saida();
+                s.Quantidade = saida.quantidade;
+                s.ValorDaVenda = saida.subtotal;
+                s.Venda = venda;
+                s.Produto = this._database.Produtos.FirstOrDefault(p => p.Id == saida.produto);
+                s.Data = DateTime.Now;
+                saidas.Add(s);
+            }
+            //Salvando saidas no banco
+            this._database.AddRange(saidas); //AddRange() -> Permite salvar uma lista de objetos no BD
+            this._database.SaveChanges();
+            
+
             return Ok(new{msg="Venda processada com sucesso!"});
     }
     }
