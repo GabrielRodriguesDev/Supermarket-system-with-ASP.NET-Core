@@ -126,5 +126,11 @@ namespace Supermarket_system_with_ASP.NET_Core.Controllers
         public IActionResult EditarEstoque() {
             return Content("");
         }
+
+        public IActionResult Vendas() {
+            var listaVendas = this._database.Vendas.ToList();
+            return View(listaVendas);
+        }
     }
+
 }
