@@ -70,3 +70,44 @@
         </div>
     </div>
 </div>
+<hr>
+
+<canvas class="line-chart"></canvas>
+<script src="https://cdn.jsdelivr.net/npm/chart.js@3.6.1/dist/chart.min.js"></script>
+<script>
+    var enderecoRelatorioDeVendas = "https://localhost:5001/Gestao/RelatorioDeVendas"
+    var labels = [];
+    var data = [];
+    $.post(enderecoRelatorioDeVendas, function(dados, status){
+        for(var i = 0; i < dados.length; i++) {
+            labels.push(dados[i].data) // Guardando as datas no array
+            data.push(dados[i].total) // Guardando dados no array
+        }
+        for(var i = 0; i < labels.length; i++) {
+            var date = new Date(labels[i])
+            date = date.toLocaleDateString()
+            labels[i] = date
+
+        }
+    })
+
+
+    var canvas = document.getElementsByClassName("line-chart");
+
+    console.log(data)
+    // Chart.js
+    const config = new Chart(canvas, {
+        type: "line",
+        data:{
+            labels: labels,
+            datasets:[{
+                label: "Total de vendas em R$",
+                data: data,
+                borderWidth: 12
+            }]
+        },
+        options: {}
+    });
+
+</script>
+

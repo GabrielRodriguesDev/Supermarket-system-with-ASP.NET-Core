@@ -1,5 +1,6 @@
 using System;
 using System.Linq;
+using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.EntityFrameworkCore;
 using Supermarket_system_with_ASP.NET_Core.Data;
@@ -7,6 +8,7 @@ using Supermarket_system_with_ASP.NET_Core.DTO;
 
 namespace Supermarket_system_with_ASP.NET_Core.Controllers
 {
+    
     public class GestaoController: Controller
     {
         private readonly ApplicationDbContext _database;
@@ -130,6 +132,11 @@ namespace Supermarket_system_with_ASP.NET_Core.Controllers
         public IActionResult Vendas() {
             var listaVendas = this._database.Vendas.ToList();
             return View(listaVendas);
+        }
+
+        [HttpPost]
+        public IActionResult RelatorioDeVendas(){
+            return Ok(this._database.Vendas.ToList());
         }
     }
 
